@@ -9,22 +9,22 @@ export default function Home() {
     { 
       title: "Project 1", 
       description: "This is a description of project 1.",
-      imageUrl: "/images/project2.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss1.jpg " // Replace with your actual image path
     },
     { 
       title: "Project 2", 
       description: "This is a description of project 2.",
-      imageUrl: "/images/project2.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss1.jpg" // Replace with your actual image path
     },
     { 
       title: "Project 3", 
       description: "This is a description of project 3.",
-      imageUrl: "/images/project3.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss1.jpg" // Replace with your actual image path
     },
     { 
       title: "Project 4", 
       description: "This is a description of project 4.",
-      imageUrl: "/images/project4.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss1.jpg" // Replace with your actual image path
     },
   ];
 
