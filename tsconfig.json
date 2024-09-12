@@ -18,8 +18,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"], // This stays the same
+      "@/components/*": ["./src/app/components/*"], // Add this to specifically target components
+      "@/lib/*": ["./src/app/lib/*"]
     }
+
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
