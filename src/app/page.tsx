@@ -1,5 +1,4 @@
-// page.tsx
-
+import { ThemeProvider } from "@/components/ThemeContext";
 import RetroGrid from "@/components/RetroGrid";
 import TextRevealByWord from "@/components/TextRevealByWord";
 import { VelocityScroll } from "@/components/VelocityScroll";
@@ -46,35 +45,37 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative w-full bg-black text-white">
-      {/* Hero section with RetroGrid */}
-      <div className="relative h-screen overflow-hidden">
-        <RetroGrid className="z-0" />
-        <div className="absolute inset-0 flex flex-col items-center">
-          <div className="mt-8">
-            <Dock />
-          </div>
-          <div className="flex-grow flex items-center justify-center">
-            <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600">
-              Rohan.
-            </h1>
+    <ThemeProvider>
+      <main className="relative w-full min-h-screen transition-colors duration-300 bg-white dark:bg-black text-black dark:text-white">
+        {/* Hero section with RetroGrid */}
+        <div className="relative h-screen overflow-hidden">
+          <RetroGrid className="z-0" />
+          <div className="absolute inset-0 flex flex-col items-center">
+            <div className="mt-8">
+              <Dock />
+            </div>
+            <div className="flex-grow flex items-center justify-center">
+              <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600">
+                Rohan.
+              </h1>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Rest of the content */}
-      <TextRevealByWord 
-        text="Frontend. Backend. UI/UX. Web development."
-        className="bg-black"
-      />
-      <div className="py-20">
-        <VelocityScroll 
-          text="Projects/ Experiments/ " 
-          default_velocity={5} 
-          className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600"
+        {/* Rest of the content */}
+        <TextRevealByWord 
+          text="Frontend. Backend. UI/UX. Web development."
+          className="bg-white dark:bg-black"
         />
-      </div>
-      <ProjectCards projects={projects} />
-    </main>
+        <div className="py-20">
+          <VelocityScroll 
+            text="Projects/ Experiments/ " 
+            default_velocity={5} 
+            className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600"
+          />
+        </div>
+        <ProjectCards projects={projects} />
+      </main>
+    </ThemeProvider>
   );
 }

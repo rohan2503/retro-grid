@@ -1,11 +1,9 @@
-// ProjectCards.tsx
-
 "use client";
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
-import { FaGithub, FaGlobe } from 'react-icons/fa'; // Import icons
+import { FaGithub, FaGlobe } from 'react-icons/fa';
 
 interface Project {
   title: string;
@@ -49,13 +47,13 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Interactive Card with Subtle Retro Gradient Border */}
+              {/* Interactive Card with Subtle Retro Gradient Border and Shadow */}
               <motion.div
-                className="rounded-xl p-px bg-gradient-to-r from-[#f6d365] via-[#fda085] to-[#fbc2eb]"
-                whileHover={{ scale: 1.05 }}
+                className="rounded-xl p-1 bg-gradient-to-r from-[#f6d365] via-[#fda085] to-[#fbc2eb] shadow-lg dark:shadow-white/10"
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 30px rgba(0, 0, 0, 0.2)" }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <div className="bg-black rounded-lg p-6 flex items-center justify-center">
+                <div className="bg-white dark:bg-black rounded-lg p-6 flex items-center justify-center">
                   <div className="relative w-[1000px] h-[600px]">
                     <Image
                       src={project.imageUrl}
@@ -69,7 +67,7 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
               </motion.div>
               {/* Text Line Below the Card with Buttons */}
               <div className="flex items-center justify-between w-full max-w-[1100px] mt-4 px-8">
-                <p className="text-xl text-white">{project.description}</p>
+                <p className="text-xl text-black dark:text-white">{project.description}</p>
                 <div className="flex space-x-4">
                   {project.githubLink && (
                     <a
@@ -77,8 +75,8 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-colors">
-                        <FaGithub className="text-2xl text-white" />
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10 transition-colors">
+                        <FaGithub className="text-2xl text-black dark:text-white" />
                       </div>
                     </a>
                   )}
@@ -88,8 +86,8 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-colors">
-                        <FaGlobe className="text-2xl text-white" />
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10 transition-colors">
+                        <FaGlobe className="text-2xl text-black dark:text-white" />
                       </div>
                     </a>
                   )}
