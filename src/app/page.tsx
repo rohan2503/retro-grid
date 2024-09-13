@@ -71,7 +71,7 @@ export default function Home() {
           <VelocityScroll 
             text="Projects/ Experiments/ " 
             default_velocity={5} 
-            className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600"
+            className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600"
           />
         </div>
         <ProjectCards projects={projects} />
