@@ -8,7 +8,7 @@ const icons = [
   { Icon: Github, href: 'https://github.com/rohan2503' },
   { Icon: Linkedin, href: 'https://www.linkedin.com/in/rohan-y-j/' },
   { Icon: Mail, href: 'mailto:rohangowdahy@gmail.com' },
-  { Icon: FileText, href: '/images/Rohan_Yogananda_RESUME.PDF' },
+  { Icon: FileText, href: '/images/Rohan_Yogananda_RESUME.pdf' },
 ];
 
 const Dock: React.FC = () => {
