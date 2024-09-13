@@ -25,7 +25,7 @@ export default function Home() {
     { 
       title: "Project 3", 
       description: "This is a description of project 3.",
-      imageUrl: "/images/ss5.gif",
+      imageUrl: "/images/ss5.jpg",
       githubLink: "https://github.com/yourusername/project3",
       websiteLink: "https://www.project3.com",
     },
