@@ -1,16 +1,14 @@
 "use client";
 import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
-import { Home, Pencil, Github, Linkedin, Twitter, Mail, Sun, Moon } from 'lucide-react';
+import { Github, Linkedin, Mail, Sun, Moon, FileText } from 'lucide-react';
 import { ThemeContext } from './ThemeContext';
 
 const icons = [
-  { Icon: Home, href: '#' },
-  { Icon: Pencil, href: '#' },
-  { Icon: Github, href: '#' },
-  { Icon: Linkedin, href: '#' },
-  { Icon: Twitter, href: '#' },
-  { Icon: Mail, href: '#' },
+  { Icon: Github, href: 'https://github.com/yourusername' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/in/yourusername' },
+  { Icon: Mail, href: 'mailto:your.email@example.com' },
+  { Icon: FileText, href: '/images/Rohan_Yogananda_RESUME.PDF' },
 ];
 
 const Dock: React.FC = () => {
@@ -28,6 +26,8 @@ const Dock: React.FC = () => {
           <motion.a
             key={index}
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`relative p-2 rounded-full ${theme === 'dark' ? 'hover:bg-white/20' : 'hover:bg-black/20'} transition-colors`}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}

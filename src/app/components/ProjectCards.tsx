@@ -76,7 +76,7 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
                       rel="noopener noreferrer"
                     >
                       <div className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10 transition-colors">
-                        <FaGithub className="text-2xl text-black dark:text-white" />
+                        <FaGithub className="text-1xl text-black dark:text-white" />
                       </div>
                     </a>
                   )}
