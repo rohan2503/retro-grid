@@ -5,9 +5,9 @@ import { Github, Linkedin, Mail, Sun, Moon, FileText } from 'lucide-react';
 import { ThemeContext } from './ThemeContext';
 
 const icons = [
-  { Icon: Github, href: 'https://github.com/yourusername' },
-  { Icon: Linkedin, href: 'https://www.linkedin.com/in/yourusername' },
-  { Icon: Mail, href: 'mailto:your.email@example.com' },
+  { Icon: Github, href: 'https://github.com/rohan2503' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/in/rohan-y-j/' },
+  { Icon: Mail, href: 'mailto:rohangowdahy@gmail.com' },
   { Icon: FileText, href: '/images/Rohan_Yogananda_RESUME.PDF' },
 ];
 
