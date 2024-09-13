@@ -1,13 +1,18 @@
+// ProjectCards.tsx
+
 "use client";
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
+import { FaGithub, FaGlobe } from 'react-icons/fa'; // Import icons
 
 interface Project {
   title: string;
   description: string;
   imageUrl: string;
+  githubLink?: string;
+  websiteLink?: string;
 }
 
 interface ProjectCardsProps {
@@ -23,42 +28,71 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ['start end', 'end start'],
   });
 
   const x = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8],
-    ["0%", "0%", `-${(projects.length - 1) * 100}%`]
+    ['0%', '0%', `-${(projects.length - 1) * 100}%`]
   );
 
   return (
     <div ref={containerRef} className="h-[400vh] relative">
       <div ref={ref} className="sticky top-0 h-screen overflow-hidden">
-        <motion.div 
-          className="flex items-center h-full"
-          style={{ x }}
-        >
+        <motion.div className="flex h-full" style={{ x }}>
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="flex-shrink-0 w-screen h-3/4 p-8"
+              className="flex-shrink-0 w-screen h-full flex flex-col items-center justify-center"
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                <div className="relative h-1/2 w-full">
-                  <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                  />
+              {/* Interactive Card with Subtle Retro Gradient Border */}
+              <motion.div
+                className="rounded-xl p-px bg-gradient-to-r from-[#f6d365] via-[#fda085] to-[#fbc2eb]"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="bg-black rounded-lg p-6 flex items-center justify-center">
+                  <div className="relative w-[1000px] h-[600px]">
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      layout="fill"
+                      objectFit="contain"
+                      className="rounded-md"
+                    />
+                  </div>
                 </div>
-                <div className="p-6 flex-1">
-                  <h3 className="text-2xl font-bold mb-4 text-white">{project.title}</h3>
-                  <p className="text-gray-300">{project.description}</p>
+              </motion.div>
+              {/* Text Line Below the Card with Buttons */}
+              <div className="flex items-center justify-between w-full max-w-[1100px] mt-4 px-8">
+                <p className="text-xl text-white">{project.description}</p>
+                <div className="flex space-x-4">
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-colors">
+                        <FaGithub className="text-2xl text-white" />
+                      </div>
+                    </a>
+                  )}
+                  {project.websiteLink && (
+                    <a
+                      href={project.websiteLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-colors">
+                        <FaGlobe className="text-2xl text-white" />
+                      </div>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -1,3 +1,5 @@
+// page.tsx
+
 import RetroGrid from "@/components/RetroGrid";
 import TextRevealByWord from "@/components/TextRevealByWord";
 import { VelocityScroll } from "@/components/VelocityScroll";
@@ -9,22 +11,37 @@ export default function Home() {
     { 
       title: "Project 1", 
       description: "This is a description of project 1.",
-      imageUrl: "/images/project1.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss2.jpg",
+      githubLink: "https://github.com/yourusername/project1",
+      websiteLink: "https://www.project1.com",
     },
     { 
       title: "Project 2", 
       description: "This is a description of project 2.",
-      imageUrl: "/images/project2.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss11.jpg",
+      githubLink: "https://github.com/yourusername/project2",
+      websiteLink: "https://www.project2.com",
     },
     { 
       title: "Project 3", 
       description: "This is a description of project 3.",
-      imageUrl: "/images/project3.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss5.gif",
+      githubLink: "https://github.com/yourusername/project3",
+      websiteLink: "https://www.project3.com",
     },
     { 
       title: "Project 4", 
       description: "This is a description of project 4.",
-      imageUrl: "/images/project4.jpg" // Replace with your actual image path
+      imageUrl: "/images/ss3.jpg",
+      githubLink: "https://github.com/yourusername/project4",
+      websiteLink: "https://www.project4.com",
+    },
+    { 
+      title: "Project 5", 
+      description: "This is a description of project 5.",
+      imageUrl: "/images/ss4.jpg",
+      githubLink: "https://github.com/yourusername/project5",
+      websiteLink: "https://www.project5.com",
     },
   ];
 
@@ -39,7 +56,7 @@ export default function Home() {
           </div>
           <div className="flex-grow flex items-center justify-center">
             <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600">
-              Rohan
+              Rohan.
             </h1>
           </div>
         </div>
@@ -52,7 +69,7 @@ export default function Home() {
       />
       <div className="py-20">
         <VelocityScroll 
-          text="Projects." 
+          text="Projects/ Experiments/ " 
           default_velocity={5} 
           className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600"
         />
