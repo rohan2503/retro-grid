@@ -7,6 +7,14 @@ import Dock from "@/components/dock";
 
 export default function Home() {
   const projects = [
+
+    { 
+      title: "Project 6", 
+      description: "Developed a live football score tracker app using Firebase for user authentication and football-data.org API for real-time match updates, with a personalized, ad-free user experience.",
+      imageUrl: "/images/splt_portfolio.png",
+      githubLink: "https://github.com/rohan2503/splt-ios-app",
+      websiteLink: "https://github.com/rohan2503/splt-ios-app",
+    },
     { 
       title: "Project 1", 
       description: "A responsive product page featuring an intuitive image gallery with custom navigation, and attention to user experience.",
