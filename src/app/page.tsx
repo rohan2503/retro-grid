@@ -72,7 +72,7 @@ export default function Home() {
 
         {/* Rest of the content */}
         <TextRevealByWord 
-          text="Frontend. Backend. UI/UX. Web development."
+          text="Frontend. Backend. UI/UX. iOS App development."
           className="bg-white dark:bg-black"
         />
         <div className="py-20">
